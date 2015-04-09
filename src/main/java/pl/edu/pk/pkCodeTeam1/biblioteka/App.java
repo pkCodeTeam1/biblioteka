@@ -8,7 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Menu" );
-        System.out.println("1. katalog");
+    	Menu menu = new Menu();
+    	menu.showMenu();
     }
 }
