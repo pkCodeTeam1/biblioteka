@@ -3,8 +3,8 @@
  */
 package pl.edu.pk.pkCodeTeam1.biblioteka;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author MikeNovember
@@ -12,28 +12,61 @@ import java.util.Map;
  */
 public class Category implements Browsable{
 	
+	public boolean is_book(){
+		return false;
+	}
+	
+	public String to_string(){
+		return m_name;
+	}
+	
+	public String contents_string(){
+		StringBuilder temp = new StringBuilder();
+				
+		for(int i = 0 ; i < m_subcategories.size() ; ++i){
+			temp.append(i);
+			temp.append(". ");
+			temp.append(m_subcategories.get(i).to_string());
+			temp.append("\n");
+		}
+		
+		return temp.toString();
+	}
+	
 	public Category(String name){
-		m_subcategories = new HashMap<String, Browsable>();
+		m_name = name;
+		
+		m_subcategories = new ArrayList<Browsable>();
 	}
 	
 	public Browsable search(String category){
-		String[] split_string = category.split(" ");
+		String[] split_string = category.split(".");
 		String subcategory_name = split_string[0];
-		String subcategory_string = category.replaceFirst(subcategory_name + " ", ""); //chyba...
+		Integer subcategory_number = Integer.parseInt(subcategory_name);
+		String subcategory_string = category.replaceFirst(subcategory_name + ".", ""); //chyba...
 
-		return m_subcategories.get(subcategory_name).search(subcategory_string);
+		return m_subcategories.get(subcategory_number).search(subcategory_string);
 	}
 	
-	public void add(String subcategory){
+	public void add_subcategory(String subcategory){
 		Category temp = new Category(subcategory);
 		
-		m_subcategories.put(subcategory, temp);
+		m_subcategories.add(temp);
+	}
+	
+	public void add_book(int ID){
+		//go to bookshelf and get reference of book with id == ID
+		//m_subcategories.add() the book reference
+
+		System.out.println("Adding book");
+		
 	}
 	
 	public void remove(String subcategory){
 		m_subcategories.remove(subcategory);		
 	}
 	
-	private Map<String, Browsable> m_subcategories;
+	private List<Browsable> m_subcategories;
+	private String m_name;
 
 }
