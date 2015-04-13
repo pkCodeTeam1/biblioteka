@@ -9,28 +9,20 @@ package pl.edu.pk.pkCodeTeam1.biblioteka;
  */
 public class Book implements Browsable {
 
-	/* (non-Javadoc)
-	 * @see pl.edu.pk.pkCodeTeam1.biblioteka.Browsable#search(java.lang.String)
-	 */
 	public Browsable search(String category) {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
-	/* (non-Javadoc)
-	 * @see pl.edu.pk.pkCodeTeam1.biblioteka.Browsable#add(java.lang.String)
-	 */
-	public void add(String subcategory) {
-		// TODO Auto-generated method stub
-
+	public boolean is_book(){
+		return true;		
 	}
 
-	/* (non-Javadoc)
-	 * @see pl.edu.pk.pkCodeTeam1.biblioteka.Browsable#remove(java.lang.String)
-	 */
-	public void remove(String subcategory) {
-		// TODO Auto-generated method stub
+	public String to_string() {
+		return new String("Tytul ksiazki");
+	}
 
+	public String contents_string() {
+		return new String("Opis ksiazki");
 	}
 
 }
