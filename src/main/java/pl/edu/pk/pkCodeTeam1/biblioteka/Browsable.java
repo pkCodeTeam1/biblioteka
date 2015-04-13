@@ -10,7 +10,8 @@ package pl.edu.pk.pkCodeTeam1.biblioteka;
 public interface Browsable {
 	
 	public Browsable search(String category);
-	public void add(String subcategory);
-	public void remove(String subcategory);
+	public String to_string();
+	public String contents_string();
+	public boolean is_book();
 
 }
