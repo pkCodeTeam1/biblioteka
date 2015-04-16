@@ -5,32 +5,27 @@ import java.util.ArrayList;
 public class Library implements IObserved {
 
 	private ArrayList<Reader> readers;
+	private boolean[] bookStatus;
 	
-	public Library() {
+	public Library(boolean[] bookBase) {
 		readers = new ArrayList<Reader>();
+		this.bookStatus = bookBase;
 	}
-	
-	@Override
+
 	public void addObserver(Reader r) {
-		// TODO Auto-generated method stub
-		
+		readers.add(r);		
 	}
 
-	@Override
 	public void deleteObserver(Reader r) {
-		// TODO Auto-generated method stub
-		
+		int index = readers.indexOf(r);
+		readers.remove(index);
 	}
 
-	@Override
 	public void notifyObserver() {
-		// TODO Auto-generated method stub
+		for(Reader r : readers){
+			r.update(bookStatus);
+		}
 		
-	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

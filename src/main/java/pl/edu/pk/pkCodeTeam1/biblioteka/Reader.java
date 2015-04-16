@@ -1,19 +1,26 @@
 package pl.edu.pk.pkCodeTeam1.biblioteka;
 
-import java.util.Observable;
-import java.util.Observer;
 
-public class Reader implements Observer{
+public class Reader implements IObserver{
+
+	private Library library;
+	private boolean[] bookStatus;
 	
-	@Override
-	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
-		
+	public Reader(Library library) {
+		this.library = library;
+		this.library.addObserver(this);
+		this.library.notifyObserver();
 	}
 	
-	public static void main(String[] args) {
-		
-
+	public void checkBook(int bookID){
+		if(bookStatus[bookID])
+			System.out.println("dostępna");
+		else
+			System.out.println("niedostępna");
+	}
+	
+	public void update(boolean[] bookStatus) {
+		this.bookStatus = bookStatus;
 	}
 
 }
