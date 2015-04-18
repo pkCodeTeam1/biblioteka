@@ -5,14 +5,14 @@ public class BookFactory {
 	private static final HashMap<int, Book> bookMap=new HashMap();
 	public static Book getBook(int id)
 	{
-		Book concreteBook=(Book)bookMap.get(id);
-		if (concreteBook==null)
+		Book book=(Book)bookMap.get(id);
+		if (book==null)
 		{
-			concreteBook=new Book(id);
-			bookMap.put(id, concreteBook);
-			System.out.println("Produkowanie książki o id: "+ id);
+			book=new Book(id);
+			bookMap.put(id, book);
+			System.out.println("Produkowanie ksiazki o id: "+ id);
 		}
-		return concreteBook;
+		return book;
 	}
 	
 }
