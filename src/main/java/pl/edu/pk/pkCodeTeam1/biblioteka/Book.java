@@ -10,17 +10,16 @@ public class Book implements IDataLoad {
 		this.id=iidd;
 	}
 	
-	public void setAuthor(string auth)
+	public void setAuthor(String auth)
 	{
 		this.author=auth;
 	}
 	
-	public void setTitle(string titl)
+	public void setTitle(String titl)
 	{
 		this.title=titl;
 	}
 	
-	@Override
 	public void loadDataOfBook()
 	{
 		System.out.println("Laduje dane ksiazki o id: "+ id+ " Autor: "+ author+ " Tytul: "+title);
