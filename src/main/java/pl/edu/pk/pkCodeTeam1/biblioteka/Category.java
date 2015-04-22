@@ -24,7 +24,7 @@ public class Category implements Browsable{
 			temp.append(". ");
 			
 			if (m_subcategories.get(i).is_book())
-				temp.append(((Book)m_subcategories.get(i)).title());
+				temp.append(((BookWrapper)m_subcategories.get(i)).title());
 			else
 				temp.append(((Category)m_subcategories.get(i)).get_name());
 			
