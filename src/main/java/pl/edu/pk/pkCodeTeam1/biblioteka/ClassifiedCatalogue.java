@@ -20,7 +20,10 @@ public class ClassifiedCatalogue {
 	}
 	
 	public void print(String category){
-		System.out.println(find(category).contents_string());		
+		if (find(category).is_book())
+			System.out.println(((Book)find(category)).title());
+		else
+			System.out.println(((Category)find(category)).contents_string());
 	}
 	
 	public Browsable find(String category){
