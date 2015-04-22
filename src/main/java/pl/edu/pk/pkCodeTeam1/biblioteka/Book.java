@@ -20,6 +20,14 @@ public class Book implements IDataLoad {
 		this.title=titl;
 	}
 	
+	public String getTitle(){
+		return title;
+	}
+	
+	public String getAuthor(){
+		return author;
+	}
+	
 	public void loadDataOfBook()
 	{
 		System.out.println("Laduje dane ksiazki o id: "+ id+ " Autor: "+ author+ " Tytul: "+title);
