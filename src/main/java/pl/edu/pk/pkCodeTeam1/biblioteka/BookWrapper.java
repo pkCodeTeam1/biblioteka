@@ -21,8 +21,12 @@ public class BookWrapper implements Browsable {
 		return true;		
 	}
 
-	public String title() {
-		return new String("Tytul ksiazki");
+	public String getTitle() {
+		return BookFactory.getBook(m_ID).getTitle();
+	}
+	
+	public String getAuthor() {
+		return BookFactory.getBook(m_ID).getAuthor();
 	}
 	
 	private int m_ID;
