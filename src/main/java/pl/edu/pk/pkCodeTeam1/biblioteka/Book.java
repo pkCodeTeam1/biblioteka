@@ -17,12 +17,8 @@ public class Book implements Browsable {
 		return true;		
 	}
 
-	public String to_string() {
+	public String title() {
 		return new String("Tytul ksiazki");
-	}
-
-	public String contents_string() {
-		return new String("Opis ksiazki");
 	}
 
 }
