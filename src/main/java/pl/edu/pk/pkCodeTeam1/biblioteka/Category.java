@@ -16,21 +16,26 @@ public class Category implements Browsable{
 		return false;
 	}
 	
-	public String to_string(){
-		return m_name;
-	}
-	
 	public String contents_string(){
 		StringBuilder temp = new StringBuilder();
-				
+		
 		for(int i = 0 ; i < m_subcategories.size() ; ++i){
 			temp.append(i);
 			temp.append(". ");
-			temp.append(m_subcategories.get(i).to_string());
+			
+			if (m_subcategories.get(i).is_book())
+				temp.append(((Book)m_subcategories.get(i)).title());
+			else
+				temp.append(((Category)m_subcategories.get(i)).get_name());
+			
 			temp.append("\n");
 		}
 		
 		return temp.toString();
+	}
+	
+	String get_name(){
+		return m_name;
 	}
 	
 	public Category(String name){
@@ -40,10 +45,10 @@ public class Category implements Browsable{
 	}
 	
 	public Browsable search(String category){
-		String[] split_string = category.split(".");
+		String[] split_string = category.split("\\.");
 		String subcategory_name = split_string[0];
 		Integer subcategory_number = Integer.parseInt(subcategory_name);
-		String subcategory_string = category.replaceFirst(subcategory_name + ".", ""); //chyba...
+		String subcategory_string = category.replaceFirst(subcategory_name + "\\.", "");
 
 		return m_subcategories.get(subcategory_number).search(subcategory_string);
 	}
