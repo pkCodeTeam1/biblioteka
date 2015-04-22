@@ -21,7 +21,7 @@ public class ClassifiedCatalogue {
 	
 	public void print(String category){
 		if (find(category).is_book())
-			System.out.println(((Book)find(category)).title());
+			System.out.println(((BookWrapper)find(category)).title());
 		else
 			System.out.println(((Category)find(category)).contents_string());
 	}
