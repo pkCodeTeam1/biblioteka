@@ -21,6 +21,9 @@ public class App
 	
 	private static String getRandomCategoryNumber(int n)
 	{
+		if(n == 0)
+			return "";
+		
 		StringBuilder sb = new StringBuilder();
 		
 		for (int i = 0 ; i < n ; ++i){
@@ -45,7 +48,18 @@ public class App
 	
     public static void main( String[] args )
     {
-
+    	katalog.add_category("", "glowna");
+      	katalog.print("");
+      	
+      	katalog.add_category("",  getRandomCategory());
+		katalog.add_category("",  getRandomCategory());
+		katalog.add_category("", getRandomCategory());
+		katalog.add_category("0", getRandomCategory());
+		katalog.add_category("1", getRandomCategory());
+		katalog.add_category("2", getRandomCategory());
+    
+      	double w = 0.0;
+      	
     	for (int i=1; i<=20; i++){
     			
     		Book book=(Book)BookFactory.getBook(i);
@@ -53,12 +67,11 @@ public class App
     		book.setTitle(getRandomTitle());
     		BookWrapper bookw = new BookWrapper();
     		bookw.set_ID(i);
-    		String subcat = getRandomCategoryNumber((i % 3) + 1);
-    		katalog.add_category(subcat, getRandomCategory());
+    		String subcat = getRandomCategoryNumber(1);
     		katalog.add_book(subcat, i);
     		katalog.print(subcat);
     			
     	}
-        
+
     }
 }
