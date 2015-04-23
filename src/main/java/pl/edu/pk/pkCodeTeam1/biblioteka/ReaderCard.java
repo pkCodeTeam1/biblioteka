@@ -5,7 +5,7 @@ public class ReaderCard {
 	private String name; 
 	private String surname;
 	private CardType state;
-	private Reader readerContact;
+	Reader readerContact;
 	
 	ReaderCard(String number, String name, String surname, Library lib) {
 		this.number = number;
