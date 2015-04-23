@@ -5,12 +5,15 @@ public class ReaderCard {
 	private String name; 
 	private String surname;
 	private CardType state;
+	private Reader readerContact;
 	
-	ReaderCard(String number, String name, String surname) {
+	ReaderCard(String number, String name, String surname, Library lib) {
 		this.number = number;
 		this.name = name;
 		this.surname = surname;
 		this.state = new StandardCard();
+		this.readerContact = new Reader(lib);
+		lib.addObserver(readerContact);
 	}
 	
 	public void show_fee(){
