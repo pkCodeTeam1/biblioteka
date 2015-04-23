@@ -12,11 +12,11 @@ public class Reader implements IObserver{
 		this.library.notifyObserver();
 	}
 	
-	public void checkBook(int bookID){
+	public boolean checkBook(int bookID){
 		if(bookStatus[bookID])
-			System.out.println("dostępna");
+			return true;
 		else
-			System.out.println("niedostępna");
+			return false;
 	}
 	
 	public void update(boolean[] bookStatus) {

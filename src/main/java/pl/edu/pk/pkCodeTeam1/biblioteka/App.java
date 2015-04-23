@@ -80,7 +80,12 @@ public class App
     	ReaderCard user2 = new ReaderCard("1", "Janusz", "Koksu", lib);
     	ReaderCard user3 = new ReaderCard("2", "John", "Kowalsky", lib);
     	
-    	user1.readerContact.checkBook(10);
+    	do{
+    		
+    	}while(false);
+    	
+    	if(user1.readerContact.checkBook(10)) 
+    		bookReserved[10] = false;
     	
     	
     		
