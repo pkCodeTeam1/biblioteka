@@ -1,3 +1,4 @@
+package pl.edu.pk.pkCodeTeam1.biblioteka;
 
 public class FlyweightPatternDemo {
 	private static final String authors[]={"JanuszC", "AdamK", "JozefS", "StanislawW", "JuliuszS", "KrzysztofB"};
