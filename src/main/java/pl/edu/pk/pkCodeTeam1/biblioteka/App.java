@@ -24,7 +24,7 @@ public class App
 		StringBuilder sb = new StringBuilder();
 		
 		for (int i = 0 ; i < n ; ++i){
-			sb.append((int)Math.random()*3);
+			sb.append((int)(Math.random()*3));
 			if (i < n-1)
 				sb.append(".");
 		}
@@ -48,13 +48,12 @@ public class App
 
     	for (int i=1; i<=20; i++){
     			
-    		/*Book book=(Book)BookFactory.getBook(i);
+    		Book book=(Book)BookFactory.getBook(i);
     		book.setAuthor(getRandomAuthor());
     		book.setTitle(getRandomTitle());
     		BookWrapper bookw = new BookWrapper();
-    		bookw.set_ID(i);*/
-    		//katalog.add_category(getRandomCategoryNumber())
-    		System.out.println(getRandomCategoryNumber(3));
+    		bookw.set_ID(i);
+    		katalog.add_category(getRandomCategoryNumber(1), getRandomCategory());
     			
     	}
         
