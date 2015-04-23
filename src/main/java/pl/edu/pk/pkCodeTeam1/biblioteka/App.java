@@ -53,7 +53,10 @@ public class App
     		book.setTitle(getRandomTitle());
     		BookWrapper bookw = new BookWrapper();
     		bookw.set_ID(i);
-    		katalog.add_category(getRandomCategoryNumber(1), getRandomCategory());
+    		String subcat = getRandomCategoryNumber((i % 3) + 1);
+    		katalog.add_category(subcat, getRandomCategory());
+    		katalog.add_book(subcat, i);
+    		katalog.print(subcat);
     			
     	}
         
