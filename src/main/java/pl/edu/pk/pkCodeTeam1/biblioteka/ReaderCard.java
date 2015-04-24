@@ -35,6 +35,10 @@ public class ReaderCard {
 	public void type_senior(){
 		this.state = new SeniorCard();
 	}
+	
+	public String getSurname(){
+		return surname;
+	}
 
 	public String toString(){
 		return name + " " + surname + "\tid " +  number + "\ttyp karty " + state; 

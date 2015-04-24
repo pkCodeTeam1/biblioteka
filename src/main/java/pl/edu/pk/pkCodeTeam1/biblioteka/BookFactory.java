@@ -10,7 +10,7 @@ public class BookFactory {
 		{
 			book=new Book(id);
 			bookMap.put(id, book);
-			System.out.println("Produkowanie ksiazki o id: "+ id);
+			//System.out.println("Produkowanie ksiazki o id: "+ id);
 		}
 		return book;
 	}
